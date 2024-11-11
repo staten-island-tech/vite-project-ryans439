@@ -1,25 +1,41 @@
-import '../styles/style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from '../../counter.js'
+import {instruments} from "./instrument.js";
+const DOMSelectors = {
+  container: document.querySelector(".instruments-container"),
+  instrumentFilterButton: document.querySelector(".countryFilter"),
+  allInstruments: document.querySelector(".allInstruments"),
+  MostExpensiveInstruments: document.querySelector(".expensiveInstruments")
+}
+function createCard(arr) {
+  DOMSelectors.container.innerHTML=""
+    arr.forEach((i) => {
+      const card = document.createElement("div"); // creats div called card
+      card.classList.add("card");
+      card.innerHTML = `
+      <img class="img" src="${i.img}">
+      <h1 class="name">${i.name}</h1>
+      <p class="origin"> ${i.origin}</p>
+      <p class="price"> $${i.price}</p>
+      `;
+      DOMSelectors.container.appendChild(card)
+    });
+  }
+  createCard(instruments)
 
-document.querySelector('#app').innerHTML = 
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
+DOMSelectors.instrumentFilterButton.addEventListener("click", function(){
+  let filteredInstruments = instruments.filter((instrument) => instrument.origin.includes("Italy"))
+  createCard(filteredInstruments)
+}
+)
+DOMSelectors.allInstruments.addEventListener("click", function(){
+  createCard(instruments)
+})
 
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
+DOMSelectors.MostExpensiveInstruments.addEventListener("click", function(){
+  let filteredInstruments = instruments.filter((instrument) => instrument.price > 2000)
+createCard(filteredInstruments)})
 
+const colorSwapButton = document.querySelector(".colorSwap");
+  colorSwapButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
 
-setupCounter(document.querySelector('#counter'))
