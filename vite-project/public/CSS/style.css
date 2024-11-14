@@ -32,7 +32,7 @@ button:hover {
 
 .instruments-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   max-width: 1200px;
   padding: 20px;
@@ -59,7 +59,7 @@ button:hover {
   width: 100%;
   max-width: 200px;
   height: 200px; 
-  object-fit: cover; /* Ensures the image covers the area without stretching */
+  object-fit: cover; 
   border: 2px solid black;
   border-radius: 8px;
   margin-bottom: 15px;
