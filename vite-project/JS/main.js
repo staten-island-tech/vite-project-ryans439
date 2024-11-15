@@ -1,3 +1,4 @@
+import "./CSS/style.css"
 import {instruments} from "./instrument.js";
 const DOMSelectors = {
   container: document.querySelector(".instruments-container"),
