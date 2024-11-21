@@ -10,7 +10,7 @@ body {
 
 h1 {
   font-size: 1.5rem;
-  color: #444;
+  color: black
 
 }
 
@@ -24,6 +24,9 @@ button {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
+  display: flex;
+  flex-direction: row;
+
 }
 
 button:hover {
@@ -87,7 +90,8 @@ button:hover {
 button {
   background-color: #0073e6;
   color: #fff;
-  border: none;
+  border: solid;
+  border-color: black;
   padding: 0.5rem 1rem;
   margin: 1rem 0.5rem;
   font-size: 1rem;
@@ -107,6 +111,8 @@ body.dark-mode {
   color: #f4f4f9;
 }
 
+
+
 body.dark-mode button {
   background-color: #555;
   color: #f4f4f9;
@@ -119,13 +125,12 @@ body.dark-mode p{
 }
 
 body.dark-mode h1{
-  color: white
+  color: lightblue
 }
 
 body.dark-mode .card {
   background-color: #444;
   color: #f4f4f9;
-  border-color: #666;
   border: solid;
   border-color: white;
 }

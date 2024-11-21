@@ -4,7 +4,8 @@ const DOMSelectors = {
   container: document.querySelector(".instruments-container"),
   instrumentFilterButton: document.querySelector(".countryFilter"),
   allInstruments: document.querySelector(".allInstruments"),
-  MostExpensiveInstruments: document.querySelector(".expensiveInstruments")
+  MostExpensiveInstruments: document.querySelector(".expensiveInstruments"),
+  instrumentFilterButton2: document.querySelector(".countryFilter2")
 }
 function createCard(arr) {
   DOMSelectors.container.innerHTML=""
@@ -25,8 +26,13 @@ function createCard(arr) {
 DOMSelectors.instrumentFilterButton.addEventListener("click", function(){
   let filteredInstruments = instruments.filter((instrument) => instrument.origin.includes("Italy"))
   createCard(filteredInstruments)
-}
-)
+})
+
+DOMSelectors.instrumentFilterButton2.addEventListener("click", function(){
+  let filteredInstruments2 = instruments.filter((instrument) => instrument.origin.includes("China"))
+  createCard(filteredInstruments2)
+})
+
 DOMSelectors.allInstruments.addEventListener("click", function(){
   createCard(instruments)
 })
