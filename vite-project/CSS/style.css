@@ -87,6 +87,14 @@ button:hover {
   color: #0073e6;
 }
 
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1 rem;
+}
+
 button {
   background-color: #0073e6;
   color: #fff;
@@ -110,7 +118,6 @@ body.dark-mode {
   background-color: #333333;
   color: #f4f4f9;
 }
-
 
 
 body.dark-mode button {
